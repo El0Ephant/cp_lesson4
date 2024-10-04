@@ -1,14 +1,28 @@
+import { MiniMaple } from "./miniMaple";
+
 document.addEventListener('DOMContentLoaded',setup)
 
 function setup() {
-    document.getElementById('demoButton').onclick = addSomething;
+    const button = document.getElementById('button');
+    button.onclick = deriviate;
 }
 
-function addSomething(){
-    const someDummyDiv = document.createElement('div');
-    someDummyDiv.classList.add('generated');
-    const count = document.getElementsByClassName('generated').length;
-    someDummyDiv.innerHTML = `I was created by JS! There are already ${count} of my friends!`;
-    const container = document.getElementById('container');
-    container.appendChild(someDummyDiv);
+function deriviate(){
+    const input = document.getElementById('input').value;
+    const varName = document.getElementById('varName').value;
+
+    const output = document.getElementById('output');
+    const rawOutput = document.getElementById('rawOutput');
+    const errorOutput = document.getElementById('errorOutput');
+    output.innerHTML = "";
+    rawOutput.innerHTML = "";
+    errorOutput.innerHTML = "";
+    
+    try {
+        output.innerHTML = MiniMaple.deriviative(input, varName);
+        rawOutput.innerHTML= `Before simplification: ${MiniMaple.deriviative(input, varName, true)}`;
+    }
+    catch (error) {
+        errorOutput.innerHTML = error.message;
+    }
 }

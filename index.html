@@ -3,19 +3,36 @@
 <head>
     <title>Lesson 4</title>
     <meta charset="UTF-8"/>
-
     <script src="src/index.js" type="module"></script>
 </head>
 
 <body>
-<h1>Implement the symbolic diff here</h1>
-<div id="container">
+<h1>Symbolic diff</h1>
 
-</div>
+
 <div>
-    <button id="demoButton">
-        Add something
+    <form>
+        <label for="input">Input:</label><br>
+        <input type="text" id="input" name="input"><br>
+    </form> 
+    <br>
+    <form>
+        <label for="input">Variable name:</label><br>
+        <input type="text" id="varName" name="varName"><br>
+    </form> 
+</div>
+<br>
+<div>
+    <button id="button">
+        Deriviate
     </button>
 </div>
+
+<h2>Result:</h2>
+<h3 id = "output"></h2>
+<h3 id = "errorOutput" style="color: rgb(78, 0, 0);"></h2>
+<br>
+<br>
+<h5 id = "rawOutput"></h2>
 </body>
 </html>
